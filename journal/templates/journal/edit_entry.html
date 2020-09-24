@@ -1,0 +1,22 @@
+<!--  Learn Scholar Beta. -->
+<!--  Copyright 2020 @Irere Emmanuel  -->
+<!--   Copyright 2020 Learn Scholar, Inc. -->
+<!-- All Rights reserved. -->
+
+{% extends 'journal/base.html' %}
+
+{% block title %}
+ Edit {{topic}}| Learn Scholar
+{% endblock title %}
+
+{% block content %}
+  <p><a href="{% url 'journal:topic' topic.id %}">{{ topic }}</a></p>
+
+  <p>Edit Entry:</p>
+
+  <form action="{% url 'journal:edit_entry' entry.id %}" method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button name="submit" class="btn btn-success">Save Changes</button>
+  </form>
+{% endblock content %}

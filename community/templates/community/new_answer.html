@@ -1,0 +1,60 @@
+<!--  Learn Scholar Beta. -->
+<!--  Copyright 2020 @Irere Emmanuel  -->
+<!--   Copyright 2020 Learn Scholar, Inc. -->
+<!-- All Rights reserved. -->
+
+{% extends "journal/base.html" %}
+
+{% block title %}
+  Add Answer | Learn Scholar 
+{% endblock title %}
+
+{% block content %}
+<div class="card mb-4">
+    <div class="card-header">
+        <p style="color: #ffffff;">{{question.author}}</p>
+    </div>
+    <div class="card-body">
+        <p><a style="color: #000000; font-family: 'Josefin Sans', sans-serif;" href="{% url 'community:question' question.id %}">{{question}}</a></p>
+    </div>
+</div>
+
+<form action="{% url 'community:new_answer' question.id %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button name="submit" class="btn btn_add_topic">Send</button>
+</form>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,300&display=swap');
+    .card{
+        width: 70%;
+    }
+    p{
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .btn_add_topic {
+        background: #04C1D1;
+        color: #ffffff;
+        border-radius: 20px;
+        font-style: italic;
+        width: 100px;
+    }
+      .btn_add_topic:hover {
+        background:transparent;
+        color:  #04C1D1;
+        border: 1px solid #04C1D1;
+        border-radius: 20px;
+        font-style: italic;
+    }
+    .card-header{
+        background-color: #04C1D1;
+    }
+    @media (max-width: 800px){
+        .card{
+            width: 100%;
+        }
+    }
+</style>
+{% endblock content %}

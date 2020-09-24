@@ -1,0 +1,82 @@
+<!--  Learn Scholar Beta. -->
+<!--  Copyright 2020 @Irere Emmanuel  -->
+<!--   Copyright 2020 Learn Scholar, Inc. -->
+<!-- All Rights reserved. -->
+
+{% extends "journal/base.html" %}
+
+{% block title %}
+  Ask Question | Learn Scholar
+{% endblock title %}
+
+{% block page_header %}
+    <a class="back-btn" href="{% url 'community:index' %}">
+        <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-arrow-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+        </svg>
+    </a>
+    <h5 style="color: #04C1D1;font-family: 'Josefin Sans', sans-serif;">Ask Question</h5>
+{% endblock page_header %}
+
+{% block content %}
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+
+<form action="{% url 'community:ask_question' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button name="submit" class="btn btn_add_topic">Ask</button>
+</form>
+<script>
+    let label = document.getElementById('id_author')
+    label.placeholder = 'Enter Your name..'
+
+    let textarea = document.getElementById('id_question')
+    textarea.placeholder = 'Write your Question Here..'
+</script>
+<style>
+    .btn_add_topic {
+        background: #04C1D1;
+        color: #ffffff;
+        border-radius: 20px;
+        font-style: italic;
+        width: 100px;
+    }
+
+    label{
+        display: inline-block;
+        font-weight: bold;
+        font-style: italic;
+        position: relative;
+        top: -30px;
+        margin-bottom: 5px;
+        margin-top: 10px;
+    }
+
+    input {
+        margin-top: 20px;
+        width: 30%;
+        height: 40px;
+    }
+    
+    #id_author{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: -58px;
+    }
+    .btn_add_topic:hover {
+        background:transparent;
+        color:  #04C1D1;
+        border: 1px solid #04C1D1;
+        border-radius: 20px;
+        font-style: italic;
+    }
+
+    @media (max-width: 800px){
+        input {
+        margin-top: 20px;
+        width: 70%;
+        height: 40px;
+    }
+    }
+</style>
+{% endblock content %}

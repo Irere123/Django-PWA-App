@@ -1,0 +1,21 @@
+<!--  Learn Scholar Beta. -->
+<!--  Copyright 2020 @Irere Emmanuel  -->
+<!--   Copyright 2020 Learn Scholar, Inc. -->
+<!-- All Rights reserved. -->
+
+{% extends 'journal/base.html' %}
+
+{% block title %}
+ New Topic | Learn Scholar
+{% endblock title %}
+
+{% block content %}
+  
+  <p>Add New Topic and it's Overview:</p>
+
+  <form action="{% url 'journal:new_topic' %}" method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button name="submit" class="btn btn-outline-success">Add Topic</button>
+  </form>
+{% endblock content %}

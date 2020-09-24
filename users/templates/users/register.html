@@ -1,0 +1,96 @@
+<!--  Learn Scholar Beta. -->
+<!--  Copyright 2020 @Irere Emmanuel  -->
+<!--   Copyright 2020 Learn Scholar, Inc. -->
+<!-- All Rights reserved. -->
+
+{% load static %}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <title>Sign Up | Learn Scholar</title>
+    <link rel="stylesheet" href="{% static 'css/sign_up.css' %}">
+</head>
+<body>
+    <div class="container">
+        <form action="" method="POST">
+			{% csrf_token %}
+            <a href="{% url 'social:begin' 'facebook' %}" class="btn btn-ghost">
+                <img src="{% static 'images/facebook.svg' %}" >
+                Sign Up with Facebook 
+            </a>
+
+            <small> OR </small>
+
+            <div class="form-control">
+                <label for="username">Username</label>
+                {{ form.username }}
+			</div>
+			
+			<div class="form-control">
+                <label for="username">Email</label>
+                {{ form.email }}
+            </div>
+
+            <div class="form-control">
+                <label for="password">Password</label>
+                {{form.password1}}
+			</div>
+			
+			<div class="form-control">
+                <label for="password">Confirm Password</label>
+                {{form.password2}}
+            </div>
+
+
+			<input style="background-color: #04C1D1!important;outline: none;" class="btn" type="submit" value="Create Account">
+           
+            {{ form.errors }}
+            
+            <small>Already have an account? <a href="{% url 'users:login' %}" class="ml-2">Log In</a></small>
+        </form>
+        <div class="features">
+           <div class="feature">
+               <h3>#Our Goal</h3>
+               <p>
+                   Our Goal is to make education available for free and accessible for everyone in this time of
+                   COVID-19.
+				   and make the web secure for your children and your family and friends.
+               </p>
+           </div>
+
+           <div class="feature">
+                <h3>#SecureWeb</h3>
+                <p>
+					We got a team that takes care of all that we make sure your kids,
+					your family and friends  are safe with us. So that you can have the best 
+					exprience ever. 
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>#Ask#Connect#Track</h3>
+                <p>
+					We got all class expriences back to you. where you can connect, ask question, track your 
+					learning.
+                </p>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        let form_fields = document.getElementsByTagName('input')
+
+        form_fields[1].placeholder = 'Username...'
+        form_fields[2].placeholder = 'Enter Your Email..'
+        form_fields[3].placeholder = 'Enter Password...'
+        form_fields[4].placeholder = 'Re-enter Password..'
+
+    </script>
+</body>
+</html>

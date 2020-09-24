@@ -1,0 +1,79 @@
+<!--  Learn Scholar Beta. -->
+<!--  Copyright 2020 @Irere Emmanuel  -->
+<!--   Copyright 2020 Learn Scholar, Inc. -->
+<!-- All Rights reserved. -->
+
+
+{% extends 'journal/base.html' %}
+
+{% block title %}
+ About | Learn Scholar
+{% endblock title %}
+
+
+{% block page_header %}
+    <a class="back-btn" href="{% url 'journal:index' %}">
+
+        <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-arrow-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+        </svg>
+    </a>
+{% endblock page_header %}
+
+{% block content %}
+<!-- Here i am import The Ubuntu and Josefin Sans Font from Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@1,300&display=swap" rel="stylesheet"> 
+
+<!-- The Logo -->
+<div class="text-center">
+    <a href="{% url 'journal:index' %}" style="font-family: 'Ubuntu', sans-serif; font-size: 30px;">Learn Scholar</a>
+</div>
+
+<!-- Box content -->
+<div class="text-center pt-4 shadow p-3 mb-5 bg-light rounded border">
+    <h5 style="color: #04C1D1;">About Us</h5>
+    <p>
+        Make your own Learning Journal, Collaborate, Ask Questions and keep a notes of the topics you're learning about in a clean way.
+        Whenever, Wherever Just Pick up your phone or Computer and start tracking your studies and help others. This webapp is created
+        and maintained by Irere Emmanuel
+    <h4 style="color: #04C1D1;">Resources</h4>
+    <p>
+      You want help about how Learn Scholar works.
+      You Can Find Resources or Help on This Page <a href="{% url 'journal:resources' %}">Resources</a> on 
+      How To Use Learn Scholar.
+    </p>
+    <h5 style="color: #04C1D1;">Follow Us On</h5>
+        <a href="#"><i style="color: blue;" class="fab fa-facebook fa-2x"></i></a>
+        <a href="#"><i style="color: red;" class="fab fa-youtube fa-2x"></i></a>
+        <a href="#"><i style="color: #1DA1F2;" class="fab fa-twitter fa-2x"></i></a>
+</div>
+
+
+
+<!-- Simple Style for The page -->
+<style>
+    p{
+        font-size: 18px;
+        line-height: 25px;
+        font-family: 'Josefin Sans', sans-serif;
+    }
+    h1, h2, h3, h4, h5{
+        font-weight: 500;
+        font-size: 30px;
+        font-family: 'Josefin Sans', sans-serif;
+    }
+    a:hover{
+        text-decoration: none;
+        color: #04C1D1;
+    }
+    .shadow{
+        box-shadow: 0 20px 30px #04c0d194!important;
+    }
+    .fab{
+        padding-top: 5px;
+        margin-left: 7px;
+    }
+</style>
+<script src="https://kit.fontawesome.com/752c71cd81.js" crossorigin="anonymous"></script>
+{% endblock content %}

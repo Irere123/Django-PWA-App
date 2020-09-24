@@ -1,0 +1,41 @@
+<!--  Learn Scholar Beta. -->
+<!--  Copyright 2020 @Irere Emmanuel  -->
+<!--   Copyright 2020 Learn Scholar, Inc. -->
+<!-- All Rights reserved. -->
+
+{% extends 'journal/base.html' %}
+
+
+{% block title %}
+Confirm Delete | Learn Scholar
+{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <div class="row"></div>
+    <br/>
+    <div class="row">
+    <div class="col-md-2 col-xs-2 col-sm-2"></div>
+        <div class="col-md-10 col-xs-10 col-sm-10">
+            <form method="post">
+                {% csrf_token %}
+              <div class="form-row">
+                <div class="alert alert-warning">
+                    Are you sure you want to delete "{{ object }}" ?
+                </div>
+              </div>
+              <button type="submit" class="btn btn-outline-danger">
+                Delete
+              </button>
+            </form>
+        </div>
+    </div>
+    </div>
+    <style>
+         .btn{
+           border-radius: 2rem;
+           font-style: italic;
+           height: 35px;
+       }
+    </style>
+{% endblock content %}

@@ -1,0 +1,24 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+django = "*"
+django-bootstrap4 = "*"
+django-pwa = "*"
+psycopg2 = "*"
+django-extensions = "*"
+django-heroku = "*"
+social-auth-app-django = "==3.1.0"
+pyopenssl = "==19.0.0"
+werkzeug = "*"
+django-like-button = "*"
+django-restframework = "*"
+markdown = "*"
+django-organizations = "*"
+
+[requires]
+python_version = "3.8"

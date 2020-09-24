@@ -1,0 +1,192 @@
+{% extends 'journal/base.html' %}
+{% load static %}
+
+{% block title %}
+  {{ request.GET.search }}
+{% endblock title %}
+
+{% block page_header %}
+    <a class="back-btn" href="{% url 'community:index' %}">
+        <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-arrow-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+        </svg>
+    </a>
+    <form class="bar mb-3 mt-3" action="{% url 'community:search_results' %}" method="get">
+        <input style="color: #04C1D1;font-family: 'Josefin Sans';"" type="text" name="search" class="searchbar" placeholder="   Search for Asked Questions" aria-label="Search" value="{{ request.GET.search }}">
+        <button style="outline: none;" type="submit" class="search-icon">
+          <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+             <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
+             <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+           </svg>
+         </button>
+    </form>
+
+    <style>
+        .bar{
+      width:45%;
+      border-radius:10px;
+      border:1px solid #dcdcdc;
+      box-shadow: 1px 1px 8px 1px #dcdcdc;
+    }
+
+    .search-icon{
+      position: relative;
+      top:10px;
+      float: right;
+      color: #04C1D1;
+    }
+
+    .bar:focus-within{
+      box-shadow: 1px 1px 8px 1px #dcdcdc;
+      outline:none;
+    } 
+    .searchbar{
+      margin-left: 5px;
+      height:45px;
+      border:none;
+      border-radius: 10px;
+      width: 70%;
+      font-size:16px;
+      outline: none;
+    }
+
+    
+
+    button {
+      border: none;
+      background: transparent;
+      outline: none;
+    }
+
+    @media (max-width: 800px){
+      .bar{
+        width:100%;
+        border-radius:10px;
+        border:1px solid #dcdcdc;
+        box-shadow: 1px 1px 8px 1px #dcdcdc;
+        height: 50px;
+      }
+    .searchbar{
+      margin-left: 0px;
+      height:45px;
+      border:none;
+      border-radius: 10px;
+      width: 100%;
+      font-size:16px;
+      outline: none;
+    }
+    .search-icon{
+      position:relative;
+      top:-32px;
+      float: right;
+    }
+    .search-icon:hover{
+      position: relative;
+      color: #04C1D1;
+    }
+    }
+    </style>
+{% endblock page_header %}
+
+
+{% block content %}
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+
+    {% for question in question_list %}
+        <div class="container mt-4">
+            <div class="row ">
+                <div class="card mb-4 ml-2 shadow">
+                    <div class="card-header">
+                        <!-- <span><img style="margin-left: 0px;" width="40px" height="40px" class="rounded-circle" src="{% static 'images/mac.jpg' %}" alt=""></span> -->
+                        <span style="color: #ffffff;font-family: 'Josefin Sans', sans-serif;">{{ question.author }}</span>
+                        <small><p style="font-style: italic; font-size: 13px; float: right; margin-top: 6px; color: #ffffff;">
+                        Asked {{question.x_ago}}
+                        </p></small>
+                    </div>
+                    <div class="card-body">
+                        <p style="font-size: 20px;">{{ question }}</p>
+                    </div>
+                    <div class="card-footer">
+                        <span><a style="color: #000000;" href="{% url 'community:question' question.id %}">{{ question.num_answers }} Answers</a></span>
+                        <span><a style="color: #000000; float: right;" href="{% url 'community:new_answer' question.id %}">Add Answer</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% empty %}
+    <div class="card text-center shadow">
+      <div class="row float-left">
+        <div class="col">
+          <div class="card-body">
+            <img src="{% static 'images/search.png' %}">
+          </div>
+        </div>
+        <div class="col mt-4">
+          <div class="card-body">
+            Sorry No Results found for "{{ request.GET.search }}"
+            Try to search something else
+          </div>
+        </div>
+    </div>
+    {% endfor %}
+
+    <style>
+    
+    img {
+      display: inline-block;
+      margin: 0 0.5rem;
+
+      animation: bounce; /* referring directly to the animation's @keyframe declaration */
+      animation-duration: 2s; /* don't forget to set a duration! */
+    }
+
+
+    .btn_add_topic {
+    background: #04C1D1;
+    color: #ffffff;
+    border-radius: 20px;
+    font-style: italic;
+    }
+    .btn_add_topic:hover {
+    background:transparent;
+    color:  #04C1D1;
+    border: 1px solid #04C1D1;
+    border-radius: 20px;
+    font-style: italic;
+    box-shadow: none;
+    }
+    p {
+    margin-top: 0;
+    margin-bottom: 0;
+    }
+    .card-header {
+    padding-top: 3px;
+    margin-bottom: 0;
+    background-color:  #04C1D1;
+    }
+    .card {
+      width: 80%;
+      box-shadow: #ffffff 2px;
+    }
+    .card-body{
+        background: #ffffff;
+        font-family: 'Josefin Sans', sans-serif;
+    }
+    .card-footer{
+        background:#ffffff;
+        font-family: 'Josefin Sans', sans-serif;
+    }
+    @media (max-width: 800px){
+        .card{
+            width: 100%;
+        }
+    }
+</style>
+<!-- Font Awosome -->
+<script src="https://kit.fontawesome.com/752c71cd81.js" crossorigin="anonymous"></script>
+
+{% endblock content %}

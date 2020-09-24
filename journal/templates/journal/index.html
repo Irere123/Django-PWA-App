@@ -1,0 +1,208 @@
+<!--  Learn Scholar Beta. -->
+<!--  Copyright 2020 @Irere Emmanuel  -->
+<!--   Copyright 2020 Learn Scholar, Inc. -->
+<!-- All Rights reserved. -->
+
+{% extends 'journal/base.html' %}
+{% load static %}
+
+{% block title %}
+  {% if request.user.is_authenticated %}
+    Learn Scholar | Home
+  {% else %}
+    Learn Scholar
+  {% endif %}
+{% endblock title %}
+
+{% block page_header %}
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+
+  {% if request.user.is_authenticated %}
+  {% else %}
+    <div class="jumbotron">
+      <h1 class="display-3" style="font-family: 'Josefin Sans';">#Track#Ask</h1>
+      <p class="lead" style="font-family: 'Josefin Sans';">
+        Make your own Learning Journal, Collaborate, Ask Questions and <mark style="color: #04C1D1;"> keep a notes of the topics you're learning about in a clean way.</mark>
+        Whenever, Wherever Just Pick up your phone and start tracking your studies and help other in just one click.
+        <mark style="color: #04C1D1;">Here is a tip for i know you are struggling when studying at home alone so sign up and help others, help yourself.</mark>
+      </p>
+      <span><a class="btn-solid-lg" style="font-family: 'Josefin Sans';" href="{% url 'users:register' %}">Sign Up</a></span>
+    </div>
+    
+  {% endif %}
+  <style>
+      .jumbotron{
+        box-shadow: 0 20px 30px #04c0d194!important;
+      }
+      .btn-solid-lg {
+        box-shadow: 0 16px 48px rgb(218, 213, 213);
+        display: inline-block;
+        padding: 1.375rem 2.625rem 1.375rem 2.625rem;
+        border: 0.125rem solid #00d1d8ad;
+        border-radius: 2rem;
+        background-color: #00d1d8ad;
+        color: #fff;
+        font: 700 0.75rem/0 "Raleway", sans-serif;
+        font-size: medium;
+        text-decoration: none;
+        transition: all 0.2s;
+        
+    }
+
+   .btn-solid-lg:hover{
+     background: transparent;
+     text-decoration: none;
+     color: #00d1d8ad;
+     border: 0.125rem solid #00d1d8ad;
+   }
+
+
+   .border-bottom {
+      border-bottom: 0px solid #ffffff!important;
+    }
+    @media (max-width: 800px) {
+      .display-3 {
+      font-size: 3.6em;
+      font-weight: 300;
+      line-height: 1.2;
+      }
+    }
+  
+  </style>
+
+{% endblock page_header %}
+
+{% block content %}
+  {% if request.user.is_authenticated %}
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+
+  <!-- Tell Your Friends Card -->
+  <div class="card text-center shadow">
+    <div class="card-header">
+      <h4 style="color: #fff;" class="text-center">Tell Your Friends</h4>
+    </div>
+    <div class="card-body">
+      <p>
+        If You like what we do, Please Tell your 
+        Friends it would help us grow and give you the best experience you can ever imagine.
+        Thank You..
+      </p>
+      <div class="text-center">
+        <a href="https://www.instagram.com/"><img src="{% static 'images/instagram.svg' %}"></a>
+        <a href="https://www.facebook.com/"><img src="{% static 'images/facebook.svg' %}"></a>
+        <a href="https://www.twitter.com/"><img src="{% static 'images/twitter.svg' %}"></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- The Discover Card -->
+  <div class="card float-right shadow mt-4 mb-4">
+    <div class="card-header">
+      <h4 style="color: #fff;" class="text-center">Discover</h4>
+    </div>
+    <div class="card-body">
+      <p class="float-left">
+        <a style="color:black;font-size: large;margin-left: 20px;" href="{% url 'community:index' %}">Questa</a>
+        Ask Questions, Answers Questions and help others
+      </p>
+      <p class="float-left">
+        <a style="color:black;font-size: large;margin-left: 20px;" href="{% url 'journal:topics' %}">Topics</a>
+        Track What you're learning with Learn Scholar
+      </p>
+     
+    </div>
+  </div>
+  {% endif %}
+{% endblock content %}
+
+{% block footer %}
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+
+
+<!-- The footer for small screen -->
+<div class="invisible">
+    <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark mt-0">
+      <!-- The Copyright texte -->
+    <a class="navbar-brand" style="font-size: 16px;" href="{% url 'journal:index' %}">&copy; Irere Emmanuel</a>
+    <!-- The icon for the about page -->
+    <div class="navbar-nav ml-auto">
+      <a style="color: #fff;" href="{% url 'journal:about' %}">
+        <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-info-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+          <path d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z"/>
+          <circle cx="8" cy="4.5" r="1"/>
+        </svg>
+      </a>
+    </div> 
+  </nav>
+</div>
+
+<!-- The footer for Big Screens -->
+<div class="visible">
+  <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark">
+      <!-- The Copyright texte -->
+    <a class="navbar-brand" style="font-size: 16px; font-family: 'Josefin Sans';" href="{% url 'journal:index' %}">&copy; Irere Emmanuel</a>
+    <!-- The icon for the about page -->
+    <div class="navbar-nav ml-auto">
+
+    </div>
+
+    <!-- The link and icon for the about, resources and contact us page -->
+    <div class="navbar-nav ml-auto">
+      <a class="navbar-brand" style="font-size: 16px;" href="{% url 'journal:about' %}">About</a>
+      <a class="navbar-brand" style="font-size: 16px;" href="{% url 'journal:contact' %}">Contact Us</a>
+      <a class="navbar-brand" style="font-size: 16px;" href="{% url 'journal:resources' %}">Resources</a>
+    </div>
+  </nav>
+</div>
+
+<!-- Style Tag where i will put the styles -->
+<style>
+  .card{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #04C1D1;
+  }
+  .card-header{
+    border-bottom: none;
+    background-color: #04C1D1;
+    font-family: 'Josefin Sans', sans-serif;
+  }
+
+  .card-body{
+    color: #ffffff;
+    font-family: 'Josefin Sans', sans-serif;
+  }
+
+  .navbar-brand {
+    display: inline-block;
+    padding-top: .3125rem;
+    padding-bottom: .3125rem;
+    margin-right: 1rem;
+    line-height: inherit;
+    white-space: nowrap;
+    font-family: 'Josefin Sans', sans-serif;
+  }
+  @media (max-width: 800px){
+    .invisible{
+      visibility: visible !important;
+    }
+    .visible{
+    visibility: hidden !important;
+    }
+    .bg-dark {
+    background-color: #04C1D1!important;
+    }
+    .card{
+     background-color: #04C1D1;
+     width: 100%;
+    }
+  }
+  .bg-dark {
+    background-color: #04C1D1!important;
+  }
+ 
+</style>
+{% endblock footer %}

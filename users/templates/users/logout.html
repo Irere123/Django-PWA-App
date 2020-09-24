@@ -1,0 +1,84 @@
+<!--  Learn Scholar Beta. -->
+<!--  Copyright 2020 @Irere Emmanuel  -->
+<!--   Copyright 2020 Learn Scholar, Inc. -->
+<!-- All Rights reserved. -->
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Pacifico&family=Roboto:ital,wght@1,100&display=swap" rel="stylesheet">
+    <title>Learn Scholar </title>
+</head>
+<body>
+    <div class="container" id="container">
+        <div class="text-center">
+            <img src="{% static 'images/logo-small.png' %}" class="rounded" alt="...">
+        </div>
+          
+        <div class="title">
+            <p class="text-center">Welcome to Learn Scholar </p>
+            <p class="lead">
+                Learn Scholar is Designed to help you Connect with your 
+                ClassMates Remotely, Ask Question, Track your Learning,
+                Enroll in courses, Teach The community, Collaborate with your 
+                ClassMates and Watch Educational Videos. Enjoy Your Learning !!!!
+            </p>
+        </div>
+        <div class="text-center">
+            <a class="btn btn-primary" href="{% url 'users:login' %}">Log in</a>
+            <a class="btn btn-primary" href="{% url 'users:register' %}">Sign Up</a>
+        </div>
+    </div>
+    <style>
+        .container {
+            background-color: #74cfbf;
+            border-radius: 10px;
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+                    0 10px 10px rgba(0,0,0,0.22);
+            position: relative;
+            overflow: hidden;
+            width: 768px;
+            max-width: 100%;
+            min-height: 480px;
+            top: 40px;
+       }
+       .logo {
+        
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 5px;
+        
+       }
+       body{
+           background-color: #7abecc;
+       }
+     
+       .title{
+           color: white;
+           font-size: larger;
+           font-family: 'Roboto', cursive;
+       }
+       .btn{
+           box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+                    0 10px 10px rgba(0,0,0,0.22);
+           border-radius: 2rem;
+       }
+       .btn:hover{
+           color: white;
+           border-color: #74cfbf ;
+           background: transparent;
+           border-radius: 2rem;
+           box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+                    0 10px 10px rgba(0,0,0,0.22);
+       }
+    </style>
+</body>
+</html>

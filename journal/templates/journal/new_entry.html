@@ -1,0 +1,23 @@
+<!--  Learn Scholar Beta. -->
+<!--  Copyright 2020 @Irere Emmanuel  -->
+<!--   Copyright 2020 Learn Scholar, Inc. -->
+<!-- All Rights reserved. -->
+
+
+{% extends 'journal/base.html' %}
+
+{% block title %}
+ New Entry | Learn Scholar
+{% endblock title %}
+
+{% block content %}
+  <p><a href="{% url 'journal:topic' topic.id %}">{{ topic }}</a></p>
+
+  <p>Add Entry:</p>
+
+  <form action="{% url 'journal:new_entry' topic.id %}" method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button name="submit" class="btn btn-outline-success">Add Entry</button>
+  </form>
+{% endblock content %}

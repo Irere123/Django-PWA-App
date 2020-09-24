@@ -1,0 +1,87 @@
+{% load bootstrap4 %}
+{% load static %}
+{% load pwa %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ask Questions, Track your Learn Collaborate and help others with Learn Scholar.">
+    <meta name="keywords" content="Learn Scholar,Ask Questions, Track, Collaborate">
+    <meta name="author" content="Irere Emmanuel">
+    <link rel="shotcut icon" type="image/png" href="{% static 'images/favicon-32x32.png' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@1,300&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <title>{% block title %}Learn Scholar{% endblock title %}</title>
+    {% progressive_web_app_meta %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript jquery='full' %}
+  
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-light bg-light mb-4 border">
+        <a href="{% url 'journal:index' %}" class="navbar-brand" style="font-family: 'Ubuntu', sans-serif;">Learn Scholar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a href="{% url 'journal:topics' %}" class="nav-link">Topics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a  href="{% url 'community:index' %}" class="nav-link">Questa</a>
+                    </li>
+    
+                </ul>
+
+                <ul class="navbar-nav ml-auto">
+                    {% if user.is_authenticated %}
+                      <li class="nav-item">
+                          <a href="{% url 'users:logout' %}" class="nav-link">Log out</a>
+                      </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a href="{% url 'users:register' %}" class="nav-link">Sign Up</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'users:login' %}" class="nav-link">Log in</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main role="main" class="container">
+        <div class="pb-2 mb-2 border-bottom">
+            {% block page_header %}{% endblock page_header %}
+        </div>
+        <div>
+            {% block content %}{% endblock content %}
+            
+        </div>
+    </main>
+    <div>
+        {% block footer %}{% endblock footer %}
+    </div>
+    </div>
+   <style>
+       .navbar-toggler{
+           border: none;
+       }
+       button:focus{
+        outline: none;
+       }
+       .navbar-light .navbar-nav .nav-link {
+           font-family: 'Josefin Sans', sans-serif;
+           color: #04C1D1;
+        }
+
+        mark:hover{
+            box-shadow: 0 4px 3px #04c0d16c!important;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</body>
+</html>

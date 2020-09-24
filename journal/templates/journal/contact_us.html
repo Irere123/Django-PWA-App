@@ -1,0 +1,46 @@
+<!--  Learn Scholar Beta. -->
+<!--  Copyright 2020 @Irere Emmanuel  -->
+<!--   Copyright 2020 Learn Scholar, Inc. -->
+<!-- All Rights reserved. -->
+
+
+{% extends "journal/base.html" %}
+
+{% block title %}
+ Contact Us | Learn Scholar
+{% endblock title %}
+
+{% block content %}
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50482.22492548014!2d-122.42403531959755!3d37.739881787218685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80859a6d00690021%3A0x4a501367f076adff!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2srw!4v1600580066902!5m2!1sen!2srw" 
+width="1200" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+
+
+<div class="contact ml-4">
+    <h4 style="font-family: 'Josefin Sans', sans-serif;">Contact Us</h4>
+</div>
+<div class="card">
+  
+</div>
+<div class="card-body mb-4">
+    <p><i class="fas fa-envelope"></i> LearnScholar.com@gmail.com</p>
+    <p><i class="fas fa-phone"></i> +122 263 2563 326</p>
+    <p><i class="fab fa-twitter"></i> @Learn Scholar</p>
+</div>
+<style>
+    .card{
+        background-color:  #04C1D1;
+    }
+    @media (max-width: 900px){
+        iframe{
+            display: none;
+        }
+        .contact{
+            text-align: center;
+        }
+        
+    }
+</style>
+<script src="https://kit.fontawesome.com/752c71cd81.js" crossorigin="anonymous"></script>
+
+{% endblock content %}

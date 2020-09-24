@@ -1,0 +1,121 @@
+<!--  Learn Scholar Beta. -->
+<!--  Copyright 2020 @Irere Emmanuel  -->
+<!--   Copyright 2020 Learn Scholar, Inc. -->
+<!-- All Rights reserved. -->
+
+{% extends 'journal/base.html' %}
+
+
+{% block title %}
+ Topics | Learn Scholar
+{% endblock title %}
+
+{% block page_header %}
+    <h1>Topics</h1>
+{% endblock page_header %}
+
+{% block content %}
+   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+
+    <!-- Add Topic button -->
+    <a href="/new_topic/" class="btn btn_add_topic">Add Topic</a>
+ 
+    <!-- Displays all the Topics. -->
+   {% for topic in topics %}
+    <div class="container">
+        <div class="row">
+            <div class="card mb-4 ml-2">
+                    
+                <h4 class="text-center">
+                    <a href="{% url 'journal:topic' topic.id %}" class="a">{{ topic }}</a>
+                </h3>
+            
+        
+                <div class="card-body">
+                    <li>{{ topic.overview }} </li>
+                </div>
+                <div class="card-footer">
+                    <span>{{ topic.num_entries }} Entries</span>
+                </div>
+            </div>
+       </div>
+    </div>
+   {% empty %}  
+     <div class="jumbotron mt-4">
+        <h3 style="font-style: italic;">No Topics have been added yet.</h3>
+        <p class="lead" style="margin-left: 20px;">
+            Click the Add Topic button 👆🏾👆🏾👆🏾 on the topic 
+            to add a topic. Thank you 👌🏼👌🏼👌🏼
+        </p>
+     </div>
+   {% endfor %}
+
+   <!-- Simple Button on the right corner. -->
+   <style>
+       .jumbotron{
+           border-radius: 20px;
+           font-family: 'Josefin Sans', sans-serif;
+       }
+       .a{
+        padding-top: 50px;
+        font-family: 'Josefin Sans', sans-serif;
+        text-decoration: none;
+       }
+       .a:hover{
+            font-family: 'Josefin Sans', sans-serif;
+            text-decoration: none;
+            color: #04C1D1;
+       }
+    
+       /*  The design for the button */
+       .btn_add_topic {
+           background: #04C1D1;
+           color: #ffffff;
+           border-radius: 20px;
+           font-style: italic;
+       }
+      
+        /* When you hover over the button this happens. */
+       .btn_add_topic:hover {
+          
+           background: transparent;
+           color: #04C1D1;
+           border-radius: 20px;
+           border: 1px solid #00d1d8ad;
+           font-style: italic;
+       }
+
+
+      .row {
+          margin-left: -19px;
+      }
+
+       .card{
+           top: 60px;
+           width: 35%;
+           border: 2px solid rgba(0,0,0,.125);
+       }
+
+      /* Card Footer */
+      .card-footer{
+          background: #04C1D1;
+      }
+
+      .card-footer span {
+          font-style: oblique;
+          color: #ffffff;
+      }
+
+      /* Card Body */
+      .card-body {
+          font-style: italic;
+          text-align: end;
+      }
+      /* Responsive Design */
+      @media screen and (max-width: 800px){
+          .card{
+              width: 100%;
+          }
+      }
+   </style>
+{% endblock content %}

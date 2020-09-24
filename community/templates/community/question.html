@@ -1,0 +1,108 @@
+<!--  Learn Scholar Beta. -->
+<!--  Copyright 2020 @Irere Emmanuel  -->
+<!--   Copyright 2020 Learn Scholar, Inc. -->
+<!-- All Rights reserved. -->
+
+
+{% extends "journal/base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <a class="back-btn" href="{% url 'community:index' %}">
+        <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-arrow-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+        </svg>
+    </a>
+{% endblock page_header %}
+
+{% block content %}
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+
+<div class="container">
+    <div class="row ">
+        <div class="card mb-4 ml-2 shadow">
+            <div class="card-header">
+                <!-- <span><img style="margin-left: 0px;" width="40px" height="40px" class="rounded-circle" src="{% static 'images/mac.jpg' %}" alt=""></span> -->
+                <span style="color: #ffffff;font-family: 'Josefin Sans';">{{ question.owner }}</span>
+                <small><p style="font-style: italic; font-size: 13px; float: right; margin-top: 6px; color: #ffffff;">
+                   Asked {{ question.x_ago }}
+                </p></small>
+            </div>
+            <div class="card-body">
+                <p style="font-size: 20px;">{{ question }}</p>
+            </div>
+            <div class="card-footer">
+                <span style="color: #000000;" >{{ question.num_answers }} Answers</span>
+                <span><a style="float: right;" href="{% url 'community:new_answer' question.id %}">Add Answer</a></span>
+            </div>
+        </div>
+    </div>
+</div>
+<h5 class="mb-4" style="float: inline-start; font-family: 'Josefin Sans', sans-serif;">Answers: </h5>
+{% for answer in answers %}
+    
+    <div class="cards mb-4 ml-2">
+        <div class="card-headers">
+            <span style="color: #ffffff;font-family: 'Josefin Sans';">{{ answer.author }}</span>
+            <span style="color: #ffffff;font-style: italic;" class="float-right">{{ answer.pub_date|timesince }}</span>
+        </div>
+        <div class="card-body">
+            {{ answer }}
+        </div>
+    </div>
+{% empty %}
+ <p>There's no answers yet for this question. Sorry....</p>
+{% endfor %}
+<style>
+    .cards {
+        float: right;
+        border-radius: 4px;
+        width: 60%;
+        border: 2px solid rgba(0,0,0,.125);
+    }
+    .card-headers {
+        border-bottom: 1px solid rgba(0,0,0,.125);
+        padding: .75rem 1.25rem;
+        margin-bottom: 0;
+        background-color: #04c0d17a;
+    }
+    .card-footers{
+        background: #ffffff;
+        font-family: 'Josefin Sans', sans-serif;
+        padding: .75rem 1.25rem;
+    }
+    p {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+      .card-header {
+        padding-top: 3px;
+        margin-bottom: 0;
+        background-color:  #04C1D1;
+      }
+      .card {
+          width: 80%;
+          border: 2px solid rgba(0,0,0,.125);
+          box-shadow: #000000 2px;
+      }
+      .card-body{
+          background: #ffffff;
+          font-family: 'Josefin Sans', sans-serif;
+      }
+      .card-footer{
+          background:#ffffff;
+          font-family: 'Josefin Sans', sans-serif;
+      }
+      @media (max-width: 800px){
+          .card{
+              width: 100%;
+          }
+          .cards {
+            float: right;
+            border-radius: 4px;
+            width: 85%;
+            border: 2px solid rgba(0,0,0,.125);
+          }
+      }
+</style>
+{% endblock content %}

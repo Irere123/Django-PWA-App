@@ -1,0 +1,75 @@
+<!--  Learn Scholar Beta. -->
+<!--  Copyright 2020 @Irere Emmanuel  -->
+<!--   Copyright 2020 Learn Scholar, Inc. -->
+<!-- All Rights reserved. -->
+
+
+{% extends 'journal/base.html' %}
+
+{% block title %}
+ {{ topic }} | Learn Scholar
+{% endblock title %}
+
+{% block page_header %}
+    <a class="back-btn" href="{% url 'journal:topics' %}">
+        <svg width="1.3em" height="1.3em" viewBox="0 0 16 16" class="bi bi-arrow-left-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5.5a.5.5 0 0 0 0-1H5.707l2.147-2.146a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708-.708L5.707 8.5H11.5z"/>
+        </svg>
+    </a>
+    <h1>{{ topic }}</h1>
+
+    <style>
+        .back-btn{
+            float: right;
+            margin-top: 10px;
+            font-size: large;
+        }
+        .back-btn:hover{
+            font-size: 20px;
+        }
+    </style>
+{% endblock page_header %}
+
+{% block content %}
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+
+    <p>
+        <a class="btn btn-outline-success" href="{% url 'journal:new_entry' topic.id %}">Add New Entry</a>
+    </p>
+
+   {% for entry in entries %}
+      <div class="card mb-3">
+          
+            <h4 class="date">{{ entry.date_added|date:'M d, Y H:i' }}
+                <small><a class=" btn btn-outline-warning" href="{% url 'journal:edit_entry' entry.id %}">Edit Entry</a></small>
+                <small><a class=" btn btn-outline-danger" href="{% url 'journal:delete' entry.pk %}">Delete</a></small>
+            </h4>
+           
+          
+          <div class="card-body">
+              {{ entry.text|linebreaks }}
+          </div>
+      </div>
+   {% empty %}
+     <p>There are no entries for this topic yet.</p>
+   {% endfor %}
+   <style>
+       .btn{
+           border-radius: 2rem;
+           font-style: italic;
+           height: 35px;
+       }
+       .date {
+        color: #aaa;
+        font-style: italic;
+        font-size: 17px;
+        margin-left: 10px;
+        margin-top: 10px;
+       }
+
+       .card {
+         border: 2px solid rgba(0,0,0,.125);
+       }
+   </style>
+
+{% endblock content %}

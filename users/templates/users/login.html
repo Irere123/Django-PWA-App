@@ -1,0 +1,82 @@
+<!--  Learn Scholar Beta. -->
+<!--  Copyright 2020 @Irere Emmanuel  -->
+<!--   Copyright 2020 Learn Scholar, Inc. -->
+<!-- All Rights reserved. -->
+
+{% load static %}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <title>Login | Learn Scholar</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+<body>
+    <div class="container">
+        <form action="" method="POST">
+			{% csrf_token %}
+            <a href="{% url 'social:begin' 'facebook' %}" class="btn btn-ghost">
+                <img src="{% static 'images/facebook.svg' %}" >
+                Log in with Facebook 
+            </a>
+
+            <small> OR </small>
+
+            <div class="form-control">
+                <label for="username">Username</label>
+                <input type="text" name="username" placeholder="Username...">
+            </div>
+
+            <div class="form-control">
+                <label for="password">Password</label>
+                <input type="password" name="password" placeholder="Password...">
+            </div>
+
+            <div class="checkbox-container">
+                <a href="#">Forgot Password</a>
+            </div>
+
+			<input style="background-color: #04C1D1!important;outline: none;" class="btn" type="submit" value="Login">
+
+			{% for message in messages %}
+					<div class="alert alert-success mt-3" role="alert">
+						{{ message }}
+					  </div>
+			{% endfor %}
+			
+            <small>Don't have an account? <a href="{% url 'users:register' %}" class="ml-2">Sign Up</a></small>
+        </form>
+        <div class="features">
+           <div class="feature">
+               <h3>#Track</h3>
+               <p>
+                   Make your own NoteBook with Learn Scholar Track what you are learning
+                   either you're learning at School or Home.
+               </p>
+           </div>
+
+           <div class="feature">
+                <h3>#Ask</h3>
+                <p>
+                    Ask Questions in a big community of people whether it's
+                    Question about what you're learning about or Something else.
+                    We Got You Covered.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>#Connect</h3>
+                <p>
+                    Connect with your Classmates or Friends, Collaborate and help
+                    each other out.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
