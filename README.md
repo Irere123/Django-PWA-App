@@ -1,4 +1,4 @@
 # Learn-Scholar
-#This is a webapp where people can track what there are learning and ask question
+This is a webapp where people can track what there are learning and ask question
 
-##Author: Irere Emmanuel
+Author: Irere Emmanuel
