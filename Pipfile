@@ -19,6 +19,7 @@ django-like-button = "*"
 django-restframework = "*"
 markdown = "*"
 django-organizations = "*"
+django-friendship = "*"
 
 [requires]
 python_version = "3.8"
