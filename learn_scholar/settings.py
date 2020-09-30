@@ -124,12 +124,8 @@ WSGI_APPLICATION = 'learn_scholar.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Learn Scholar ORG',
-        'USER': 'postgres',
-        'HOST': '127.0.0.1',
-        'PORT': '5000',
-        'PASSWORD': 'irere2045 emmy',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
