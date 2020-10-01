@@ -38,14 +38,12 @@ INSTALLED_APPS = [
     # My Apps
     'journal',
     'community',
-    'documantation',
     'users',
 
     # 3rd Party Apps
     'bootstrap4',
     'social_django',
     'django_extensions',
-    'friendship',
     'pwa',
 
 
