@@ -101,10 +101,6 @@ def about(request):
     return render(request, 'journal/about.html')
 
 # The About page or Info Page
-def resources(request):
-    return render(request, 'journal/resources.html')
-
-# The About page or Info Page
 def contact_us(request):
     return render(request, 'journal/contact_us.html')
 

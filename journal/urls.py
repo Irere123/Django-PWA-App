@@ -19,8 +19,6 @@ urlpatterns = [
     path('delete/<int:pk>/', views.delete, name='delete'),
     # About page
     path('about/', views.about, name='about'),
-    # Resources Page
-    path('resources/', views.resources, name='resources'),
     # About page
     path('contact/', views.contact_us, name='contact'),
 ]

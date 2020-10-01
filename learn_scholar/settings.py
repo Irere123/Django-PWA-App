@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     # My Apps
     'journal',
     'community',
+    'documantation',
     'users',
 
     # 3rd Party Apps
@@ -124,8 +125,12 @@ WSGI_APPLICATION = 'learn_scholar.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'Learn Scholar',
+        'USER': 'postgres',
+        'PASSWORD': 'irere2045 emmy',
+        'HOST': '127.0.0.1',
+        'PORT': '3000',
     }
 }
 
