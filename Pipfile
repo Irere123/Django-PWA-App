@@ -20,6 +20,7 @@ django-restframework = "*"
 markdown = "*"
 django-organizations = "*"
 django-friendship = "*"
+pillow = "*"
 
 [requires]
 python_version = "3.8"
