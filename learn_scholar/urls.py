@@ -11,6 +11,7 @@ urlpatterns = [
     path('', include('journal.urls')),
     # URLS for Community App
     path('', include('community.urls')),
+    path('', include('documentation.urls')),
     # URLS for Users App
     path('account/', include('users.urls')),
     # URLS for PWA App

@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     # My Apps
     'journal',
     'community',
+    'documentation',
     'users',
 
     # 3rd Party Apps
