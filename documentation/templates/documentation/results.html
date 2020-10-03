@@ -12,7 +12,7 @@
         </svg>
     </a>
     <form class="bar mb-3 mt-3" action="{% url 'documentation:results' %}" method="GET">
-        <input style="color: #04C1D1;font-family: 'Josefin Sans';"" type="text" name="q" class="searchbar" placeholder="   Search for Asked Questions" aria-label="Search" value="{{ request.GET.search }}">
+        <input type="text" name="q" class="searchbar" placeholder="   Search for Tutorials" aria-label="Search" value="{{ request.GET.search }}">
         <button style="outline: none;" type="submit" class="search-icon">
           <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
              <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
@@ -112,19 +112,8 @@
         </div>
         <div class="col mt-4">
           <div class="card-body">
-            Sorry No Results found for "{{ request.GET.q }}"
-            Please Try again by:
-            <ul>
-                <li>
-                   Checking your Spelling 
-                </li>
-                <li>
-                    Searching something else
-                </li>
-                <li>
-                    Checking your Spelling 
-                </li>
-            </ul>
+            Sorry No Results found for "{{ request.GET.q }}",
+            Please Try Again...
           </div>
         </div>
     </div>
