@@ -15,9 +15,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
     <title>{% block title %}Learn Scholar{% endblock title %}</title>
     {% progressive_web_app_meta %}
-    {% bootstrap_css %}
-    {% bootstrap_javascript jquery='full' %}
-  
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-grid.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-grid.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-reboot.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-reboot.min.css' %}">
+
 </head>
 <body>
     <nav class="navbar navbar-expand-md navbar-light bg-light mb-4 border">
@@ -82,6 +88,14 @@
             box-shadow: 0 4px 3px #04c0d16c!important;
         }
     </style>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+
+
+    <!-- Bootstrap Javascript -->
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+
 </body>
 </html>
