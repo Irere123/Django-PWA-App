@@ -5,6 +5,82 @@
 {% endblock title %}
 
 {% block page_header %}
+<form class="bar mb-4" action="{% url 'documentation:results' %}" method="GET">
+    <input style="color: #04C1D1;font-family: 'Josefin Sans';" type="text" name="q" class="searchbar" placeholder="   Search for Tutorials" aria-label="Search">
+    <button style="outline: none;" type="submit" class="search-icon">
+      <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+         <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
+         <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+       </svg>
+     </button>
+ </form>
+
+ <style>
+   .bar{
+     width:45%;
+     border-radius:10px;
+     border:1px solid #dcdcdc;
+     box-shadow: 1px 1px 8px 1px #dcdcdc;
+   }
+
+   .search-icon{
+     position: relative;
+     top:10px;
+     float: right;
+     color: #04C1D1;
+   }
+
+   .bar:focus-within{
+     box-shadow: 1px 1px 8px 1px #dcdcdc;
+     outline:none;
+   } 
+   .searchbar{
+     margin-left: 0px;
+     height:45px;
+     border:none;
+     border-radius: 10px;
+     width: 70%;
+     font-size:16px;
+     outline: none;
+   }
+
+   
+
+   button {
+     border: none;
+     background: transparent;
+     outline: none;
+   }
+
+   @media (max-width: 900px){
+     .bar{
+       width:100%;
+       border-radius:10px;
+       border:1px solid #dcdcdc;
+       box-shadow: 1px 1px 8px 1px #dcdcdc;
+       height: 50px;
+     }
+   .searchbar{
+     background: transparent;
+     margin-left: 0px;
+     height:45px;
+     border:none;
+     border-radius: 10px;
+     width: 100%;
+     font-size:16px;
+     outline: none;
+   }
+   .search-icon{
+     position:relative;
+     top:-32px;
+     float: right;
+   }
+   .search-icon:hover{
+     position: relative;
+     color: #04C1D1;
+   }
+   }
+ </style>
    <h3>Tutorials</h3>
 {% endblock page_header %}
 
