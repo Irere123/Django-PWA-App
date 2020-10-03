@@ -10,20 +10,23 @@
 
 {% block content %}
    {% for document in documents %}
-       <h1>{{ document.title }}</h1>
-       <ul>
-           <li>
-               <p>{{ document.content }}</p>
-               <img src="{{ document.cover_image.url }}" alt="">
-               <video src="{{ document.video.url }}"></video>
-           </li>
-       </ul>
+    <div class="card mb-4 mt-4">
+        
+        <div class="card-body">
+            <h2 class="card-title">{{ document.title }}</h2>
+            <p class="card-text">{{ document.content }}</p>
+        </div>
+        <img src="{{ document.cover_image.url }}" class="card-img-top" alt="...">
+    </div>
    {% empty %}
      
    {% endfor %}
    <style>
        h1, h2, h3, h4, h5, h6, p{
            font-family: 'Josefin Sans', sans-serif;
+       }
+       .card{
+          box-shadow: 0 20px 30px #04c0d194!important;
        }
    </style>
 {% endblock content %}
