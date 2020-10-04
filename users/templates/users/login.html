@@ -44,9 +44,9 @@
 			<input style="background-color: #04C1D1!important;outline: none;" class="btn" type="submit" value="Login">
 
 			{% for message in messages %}
-					<div class="alert alert-success mt-3" role="alert">
-						{{ message }}
-					  </div>
+                <script>
+                    alert(`{{ message }}, Thank You For Joining Learn Scholar Community.`)
+                </script>
 			{% endfor %}
 			
             <small>Don't have an account? <a href="{% url 'register' %}" class="ml-2">Sign Up</a></small>
