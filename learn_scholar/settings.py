@@ -181,10 +181,10 @@ STATICFILES_DIRS = [
 ]
 
 # My settings
-LOGIN_URL = 'users:login'
+LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'journal:index'
-LOGOUT_URL = 'users:logout'
-LOGOUT_REDIRECT_URL = 'users:login'
+LOGOUT_URL = 'logout'
+LOGOUT_REDIRECT_URL = 'login'
 
 
 # SMTP  Configuration
