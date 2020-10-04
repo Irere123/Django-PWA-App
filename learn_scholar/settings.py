@@ -186,6 +186,18 @@ LOGIN_REDIRECT_URL = 'journal:index'
 LOGOUT_URL = 'users:logout'
 LOGOUT_REDIRECT_URL = 'users:login'
 
+
+# SMTP  Configuration
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'LearnScholar.com@gmail.com'
+EMAIL_HOST_PASSWORD = 'irere2045 emmy'
+
+
+
 # PWA Settings
 PWA_APP_NAME = 'Learn Scholar'
 PWA_APP_DESCRIPTION = "#Track #Ask #Connect"
