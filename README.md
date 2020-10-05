@@ -1,2 +1,6 @@
-# Learn-Scholar
+# Learn-Schol
+
+---
+---
+### Author: Irere Emmanuel
 
