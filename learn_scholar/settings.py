@@ -191,21 +191,17 @@ EMAIL_HOST_PASSWORD = 'irere2045 emmy'
 # PWA Settings
 PWA_APP_NAME = 'Learn Scholar'
 PWA_APP_DESCRIPTION = "#Track #Ask #Connect"
-PWA_APP_THEME_COLOR = ' #04c0d194'
-PWA_APP_BACKGROUND_COLOR = '#04C1D1'
+PWA_APP_THEME_COLOR = ' #000000'
+PWA_APP_BACKGROUND_COLOR = '#ffffff'
 PWA_APP_DISPLAY = 'standalone'
 PWA_APP_SCOPE = '/'
 PWA_APP_ORIENTATION = 'portrait-primary'
 PWA_APP_START_URL = '/'
-PWA_APP_STATUS_BAR_COLOR = 'default'
+PWA_APP_STATUS_BAR_COLOR = '#04c0d194'
 PWA_APP_ICONS = [
     {
         'src': '/static/images/72x72.png',
         'sizes': '72x72'
-    },
-    {
-        'src': '/static/images/144x144.png',
-        'sizes': '144x144'
     },
     {
         'src': '/static/images/152x152.png',
@@ -226,8 +222,8 @@ PWA_APP_ICONS = [
 ]
 PWA_APP_ICONS_APPLE = [
     {
-        'src': '/static/images/144x144.png',
-        'sizes': '144x144'
+        'src': '/static/images/152x152.png',
+        'sizes': '152x152'
     }
 ]
 PWA_APP_SPLASH_SCREEN = [
