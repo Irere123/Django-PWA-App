@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'bootstrap4',
     'social_django',
     'django_extensions',
+    'ckeditor',
     'pwa',
 
 
@@ -81,20 +82,11 @@ REST_FRAMEWORK = {
 
 #add this # New
 AUTHENTICATION_BACKENDS = [
-    'social_core.backends.open_id.OpenIdAuth',
-    'social_core.backends.google.GoogleOpenId',
-    'social_core.backends.google.GoogleOAuth2',
-    'social_core.backends.google.GoogleOAuth',
-    'social_core.backends.twitter.TwitterOAuth',
     'social_core.backends.linkedin.LinkedinOAuth2',
     'social_core.backends.instagram.InstagramOAuth2',
     'social_core.backends.facebook.FacebookOAuth2',
     'django.contrib.auth.backends.ModelBackend',
 ]
-
-# New
-SOCIAL_AUTH_FACEBOOK_KEY = '637266440171142'       # App ID
-SOCIAL_AUTH_FACEBOOK_SECRET = '8762149c9cbdd480b20bd59ed37584d0'  # App Secret
 
 ROOT_URLCONF = 'learn_scholar.urls'
 
@@ -109,8 +101,6 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'social_django.context_processors.backends', # add this
-                'social_django.context_processors.login_redirect', # add this
             ],
         },
     },

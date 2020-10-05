@@ -21,6 +21,7 @@ markdown = "*"
 django-organizations = "*"
 django-friendship = "*"
 pillow = "*"
+django-ckeditor = "*"
 
 [requires]
 python_version = "3.8"

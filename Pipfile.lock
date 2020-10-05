@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "123d001ea15b21bc228c68d47e58600f79accfb9c6d02f71e95861ab3fae9352"
+            "sha256": "6f52adfcd7fb2a155dd44f54ad1c4c97de47e3818623aeb2bd67f8f5a230554a"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -26,11 +26,11 @@
         },
         "beautifulsoup4": {
             "hashes": [
-                "sha256:1edf5e39f3a5bc6e38b235b369128416c7239b34f692acccececb040233032a1",
-                "sha256:5dfe44f8fddc89ac5453f02659d3ab1668f2c0d9684839f0785037e8c6d9ac8d",
-                "sha256:645d833a828722357038299b7f6879940c11dddd95b900fe5387c258b72bb883"
+                "sha256:4c98143716ef1cb40bf7f39a8e3eec8f8b009509e74904ba3a7b315431577e35",
+                "sha256:84729e322ad1d5b4d25f805bfa05b902dd96450f43842c4e99067d5e1369eb25",
+                "sha256:fff47e031e34ec82bf17e00da8f592fe7de69aeea38be00523c04623c04fb666"
             ],
-            "version": "==4.9.2"
+            "version": "==4.9.3"
         },
         "certifi": {
             "hashes": [
@@ -146,6 +146,14 @@
             "index": "pypi",
             "version": "==2.2.0"
         },
+        "django-ckeditor": {
+            "hashes": [
+                "sha256:29fd1a333cb9741ac2c3fd4e427a5c00115ed33a2389716a09af7656022dcdde",
+                "sha256:cc2d377f1bdcd4ca1540caeebe85f7e2cd006198d57328ef6c718d3eaa5a0846"
+            ],
+            "index": "pypi",
+            "version": "==6.0.0"
+        },
         "django-extensions": {
             "hashes": [
                 "sha256:6809c89ca952f0e08d4e0766bc0101dfaf508d7649aced1180c091d737046ea7",
@@ -169,6 +177,13 @@
             ],
             "index": "pypi",
             "version": "==0.3.1"
+        },
+        "django-js-asset": {
+            "hashes": [
+                "sha256:8ec12017f26eec524cab436c64ae73033368a372970af4cf42d9354fcb166bdd",
+                "sha256:c163ae80d2e0b22d8fb598047cd0dcef31f81830e127cfecae278ad574167260"
+            ],
+            "version": "==1.2.2"
         },
         "django-like-button": {
             "hashes": [
