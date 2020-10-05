@@ -4,8 +4,9 @@ from ckeditor.fields import RichTextField
 # Create your models here.
 class Document(models.Model):
     title = models.CharField(max_length=500)
+    cover_image = models.ImageField(upload_to='images')
     date_added = models.DateTimeField(auto_now_add=True)
-    content = RichTextField(blank=True)
+    content = models.TextField()
 
     class Meta:
         ordering = ['-date_added']

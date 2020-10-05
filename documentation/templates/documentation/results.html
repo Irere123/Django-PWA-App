@@ -97,10 +97,10 @@
         <div class="card mb-4 mt-4 shadow">
             
             <div class="card-body">
-                <h2 class="card-title">{{ document.title }}</h2>
-                <p class="card-text">{{ document.content }}</p>
+               <h2>{{ document.title }}</h2>
+              <p class="card-text">{{ document.content }}</p>
+              <img src="{{ document.cover_image.url }}" alt="Cover Image">
             </div>
-            <img src="{{ document.cover_image.url }}" class="card-img-top" alt="...">
         </div>
     {% empty %}
     <div class="card text-center shadow">

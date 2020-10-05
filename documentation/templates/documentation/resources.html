@@ -60,25 +60,25 @@
        box-shadow: 1px 1px 8px 1px #dcdcdc;
        height: 50px;
      }
-   .searchbar{
-     background: transparent;
-     margin-left: 0px;
-     height:45px;
-     border:none;
-     border-radius: 10px;
-     width: 100%;
-     font-size:16px;
-     outline: none;
-   }
-   .search-icon{
-     position:relative;
-     top:-32px;
-     float: right;
-   }
-   .search-icon:hover{
-     position: relative;
-     color: #04C1D1;
-   }
+    .searchbar{
+      background: transparent;
+      margin-left: 0px;
+      height:45px;
+      border:none;
+      border-radius: 10px;
+      width: 100%;
+      font-size:16px;
+      outline: none;
+    }
+    .search-icon{
+      position:relative;
+      top:-32px;
+      float: right;
+    }
+    .search-icon:hover{
+      position: relative;
+      color: #04C1D1;
+    }
    }
  </style>
    <h3>Tutorials</h3>
@@ -89,10 +89,10 @@
     <div class="card mb-4 mt-4">
         
         <div class="card-body">
-            <h2 class="card-title">{{ document.title }}</h2>
+            <h2>{{ document.title }}</h2>
             <p class="card-text">{{ document.content }}</p>
+            <img src="{{ document.cover_image.url }}" alt="Cover Image">
         </div>
-        <img src="{{ document.cover_image.url }}" class="card-img-top" alt="...">
     </div>
    {% empty %}
      

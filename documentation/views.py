@@ -17,5 +17,5 @@ class SearchResultsListView(ListView):
     def get_queryset(self):
         query = self.request.GET.get('q')
         return Document.objects.filter(
-            Q(title__icontains =query) | Q(content__icontains = query) | Q(cover_image__icontains=query)
+            Q(content__icontains = query)
         )
