@@ -8,7 +8,6 @@ from .forms import QuestionCreationForm, AnswerCreationForm
 
 
 # Views for rendering templates
-@login_required
 def index(request):
    """The Home page that shows all Questions asked"""
    questions = Question.objects.order_by('-pub_date')
@@ -59,12 +58,7 @@ def new_answer(request, question_id):
     # Display a blank or invalid form
     context = {'question': question, 'form':form}
     return render(request,'community/new_answer.html', context)
-
-def comment(request, answer_id):
-    answer = Answer.objects.get(id=answer_id)
-    comments = answer.comments_set.order_by()
-    context = {'answer':answer, 'comments':comments}
-    return render(request, 'community/comments.html', context)    
+ 
 
 class SearchResultsListView(ListView):
     model = Question
