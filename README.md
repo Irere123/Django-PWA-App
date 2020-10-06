@@ -1,9 +1,7 @@
 # Learn Scholar
 
----
----
-> You can Find this website on
-[learn-scholar.herokuapp.com]('https://learn-scholar.herokuapp.com' "Learn Scholar")
+
+You can Find this website on[learn-scholar.herokuapp.com]('https://learn-scholar.herokuapp.com' "Learn Scholar")
 
 ## Track#Ask
 ----
