@@ -1,0 +1,33 @@
+{% extends 'journal/base.html' %}
+
+
+{% block page_header %}
+{% endblock page_header %}
+
+{% block title %}
+ Offline
+{% endblock title %}
+
+{% block content %}
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+
+<h1 class="text-center">OOPS!</h1>
+<div class="container text-center">
+  <p>Currently You Cannot Vew This Page Offline</p>
+  <a href="/" class="btn btn-success shadow">Go to Homepage</a>
+</div>
+<style>
+    h1, p, a{
+        font-family: 'Josefin Sans';
+    }
+    .btn-success{
+        background-color:  #04C1D1;
+        border: #04C1D1;
+    }
+    .btn-success:hover{
+        background: transparent;
+        border: #04C1D1;
+        color: #04C1D1;
+    }
+</style>
+{% endblock content %}

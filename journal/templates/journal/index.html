@@ -18,6 +18,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
 
   {% if request.user.is_authenticated %}
+  
   {% else %}
     <div class="jumbotron">
       <h1 class="display-3" style="font-family: 'Josefin Sans';">#Track#Ask</h1>
@@ -73,7 +74,7 @@
 {% endblock page_header %}
 
 {% block content %}
-  {% if request.user.is_authenticated %}
+  {% if user.is_authenticated %}
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
 
   <!-- Tell Your Friends Card -->
