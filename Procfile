@@ -1,1 +1,0 @@
-web: gunicorn learn_scholar.wsgi --log-file -
