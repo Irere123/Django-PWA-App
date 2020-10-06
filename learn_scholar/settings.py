@@ -178,6 +178,10 @@ LOGIN_REDIRECT_URL = 'journal:index'
 LOGOUT_URL = 'logout'
 LOGOUT_REDIRECT_URL = 'login'
 
+# Heroku Settings
+import django_heroku
+django_heroku.settings(locals())
+
 
 # SMTP  Configuration
 
