@@ -9,9 +9,6 @@
 ----
 Make your own Learning Journal, Collaborate, Ask Questions and keep a notes of the topics you're learning about in a clean way. Whenever, Wherever Just Pick up your phone and start tracking your studies and help other in just one click.
 
-<!-- Takes Them To the Sign Up Page -->
-[Sign Up]('https://learn-scholar.herokuapp.com/account/register/' "Sign Up")
-
 ## Preview
 
 ---
