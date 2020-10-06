@@ -22,6 +22,7 @@ django-organizations = "*"
 django-friendship = "*"
 pillow = "*"
 django-ckeditor = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.8"
