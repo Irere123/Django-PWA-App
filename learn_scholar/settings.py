@@ -25,12 +25,13 @@ SECRET_KEY = 'h&1n=z^4#7=)h3dupdex=!gy!-xb3m2h#a-mm)$sl*_*m&6%b6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG for deployment and production
-if os.environ.get('DEBUG') == 'True':
-    DEBUG = True
-elif os.environ.get('DEBUG') == 'False':
-    DEBUG = False
+# if os.environ.get('DEBUG') == 'True':
+#     DEBUG = True
+# elif os.environ.get('DEBUG') == 'False':
+#     DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['www.learn-scholar-org.herokuapp.com', 'learn-scholar-org.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -238,4 +239,4 @@ PWA_APP_SPLASH_SCREEN = [
 PWA_APP_DIR = 'ltr'
 PWA_APP_LANG = 'en-US'
 
-PWA_SERVICE_WORKER_PATH = os.path.join(BASE_DIR, 'learn_scholar', 'sw.js')
+PWA_SERVICE_WORKER_PATH = os.path.join(BASE_DIR, 'learn_scholar', 'serviceworker.js')
