@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'community',
     'documentation',
     'users',
+    'analytics',
 
     # 3rd Party Apps
     'bootstrap4',

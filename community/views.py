@@ -5,6 +5,7 @@ from .models import Question, Answer
 from django.views.generic import ListView
 from django.db.models import Q
 from .forms import QuestionCreationForm, AnswerCreationForm
+from analytics.signals import object_veiwed_signal
 
 
 # Views for rendering templates
@@ -18,8 +19,10 @@ def index(request):
 def question(request, question_id):
     """Show a single question and all its answers."""
     question = Question.objects.get(id=question_id)
+    object_veiwed_signal.send(question.__class__, instance=question, request=request)
     answers = question.answer_set.order_by('-pub_date')
     context = {'question': question, 'answers': answers}
+
 
     return render(request, 'community/question.html', context)
 

@@ -6,6 +6,7 @@ from django.http import Http404
 from .models import Topic, Entry
 from .forms import TopicForm, EntryForm
 from django.views.generic import ListView
+from analytics.signals import object_veiwed_signal
 
 # Views for rendering templates
 
@@ -25,6 +26,8 @@ def topics(request):
 def topic(request, topic_id):
     """Show a single and all its entries."""
     topic = get_object_or_404(Topic, id=topic_id)
+    object_veiwed_signal.send(topic.__class__, instance=topic, request=request)
+
     # Make sure the topic belongs to the current user
     if topic.owner != request.user:
        raise Http404
