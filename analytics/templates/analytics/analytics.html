@@ -1,0 +1,12 @@
+{% extends 'journal/base.html' %}
+
+{% block content %}
+{% for histroy in objects %}
+   <ul>
+       <li>
+           <p>{{ histroy.content_object }}</p>
+           <small><sub>Viewed On {{ histroy.timestamp }}</sub></small>
+       </li>
+   </ul>
+{% endfor %}
+{% endblock content %}

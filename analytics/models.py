@@ -13,6 +13,7 @@ class ObjectViewed(models.Model):
     object_id = models.PositiveIntegerField()
     content_object = GenericForeignKey('content_type', 'object_id')
     timestamp = models.DateTimeField(auto_now_add=True)
+        
 
     def __str__(self):
         return f"{self.content_object} Viewed On {self.timestamp}"

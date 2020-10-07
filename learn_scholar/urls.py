@@ -14,6 +14,8 @@ urlpatterns = [
     path('', include('documentation.urls')),
     # URLS for Users App
     path('account/', include('users.urls')),
+    # URLS for Users App
+    path('analytics/', include('analytics.urls')),
     # URLS for PWA App
     path('', include('pwa.urls')),  # You MUST use an empty string as the URL prefix
     # URLS for Social-Auth-Django
