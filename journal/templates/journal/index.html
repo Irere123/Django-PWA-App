@@ -103,16 +103,28 @@
     </div>
     <div class="card-body">
       <p class="float-left">
-        <a style="color:black;font-size: large;margin-left: 20px;" href="{% url 'community:index' %}">Questa</a>
-        Ask Questions, Answers Questions and help others
+        <a style="color:black;font-size: large;margin-left: 20px;" href="{% url 'profile' %}">Profile</a>
+              View Your Questions and Answers
       </p>
       <p class="float-left">
-        <a style="color:black;font-size: large;margin-left: 20px;" href="{% url 'journal:topics' %}">Topics</a>
-        Track What you're learning with Learn Scholar
+        <a style="color:black;font-size: large;margin-left: 20px;" href="{% url 'community:index' %}">Questa</a>
+             Ask Questions and Answers Questions
       </p>
-     
     </div>
   </div>
+  {% endif %}
+
+  {% if user.is_staff %}
+    <div style="width: 40%;" class="card text-center shadow mt-2 visible">
+      <div class="card-header">
+        <h4 style="color: #fff;" class="text-center">Total Users</h4>
+      </div>
+      <div class="card-body">
+        <div class="text-center">
+           <h1>{{ active.count }}</h1>
+        </div>
+      </div>
+    </div>
   {% endif %}
 {% endblock content %}
 

@@ -7,13 +7,26 @@ from .models import Topic, Entry
 from .forms import TopicForm, EntryForm
 from django.views.generic import ListView
 from analytics.signals import object_veiwed_signal
+from django.contrib.auth.models import User
+from django.contrib.sessions.models import Session
+from django.utils import timezone
 
 # Views for rendering templates
+
+def get_current_users():
+    active_sessions = Session.objects.filter(expire_date__gte=timezone.now())
+    user_id_list = []
+    for session in active_sessions:
+        data = session.get_decoded()
+        user_id_list.append(data.get('_auth_user_id'))
+    return User.objects.filter(id__in=user_id_list)
 
 
 def index(request):
     """The Home page for learning log."""
-    return render(request, 'journal/index.html')
+    active = get_current_users()
+    context = {'active':active}
+    return render(request, 'journal/index.html', context)
 
 @login_required
 def topics(request):

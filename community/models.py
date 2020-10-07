@@ -30,15 +30,11 @@ class Question(models.Model):
     """A Question the user want to ask"""
     question = models.TextField()
     pub_date = models.DateTimeField(auto_now_add=True)
-    author = models.CharField(max_length=200)
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
    
     def __str__(self):
         """Return a string representation of the model."""
         return self.question
-
-    def get_absolute_url(self):
-       return reverse('community:index')
     
 
     @property

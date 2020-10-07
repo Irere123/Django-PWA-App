@@ -1,13 +1,53 @@
 {% extends 'journal/base.html' %}
 
+{% block page_header %}
+  <h4>{{ user.username|title }}'s Profile</h4>
+{% endblock page_header %}
+
+{% block title %}
+  {{ user.username|title }} | Learn Scholar
+{% endblock title %}
+
 {% block content %}
-  <div class="content-section">
-    <div class="media">
-      <img class="rounded-circle account-img" src="{{ user.profile.image.url }}" alt="">
-      <div class="media-body">
-        <h2 class="account-heading">{{ user.username }}</h2>
-        <p class="text-secondary">{{ user.email }}</p>
+<div class="card mb-3 shadow" style="max-width: 540px;">
+  <div class="row no-gutters">
+    <div class="col-md-4 shadow">
+      <img src="{{ user.profile.image.url }}" class="card-img" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h4 class="card-title">{{ user.username|title }}</h4>
+        <p class="text-primary">{{ user.email }}</p>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <i class="card-text text-primary">Last Login: {{ user.last_login }}</i>
       </div>
     </div>
   </div>
+</div>
+
+  <style>
+    .card{
+      width: 60%;
+    }
+    
+    .card-img{
+      width: 179.33px;
+      height: 231px;
+    }
+    
+    h1, h2, h3, h4, h5, h6, p{
+      font-family: 'Josefin Sans';
+    }
+
+    @media (max-width: 850px){
+      .card{
+        width: 100%;
+      }
+
+      .card-img{
+        width: 328px;
+        height: 218.61px;
+      }
+    }
+  </style>
 {% endblock content %}
