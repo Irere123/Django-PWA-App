@@ -1,4 +1,5 @@
 {% extends 'journal/base.html' %}
+{% load static %}
 
 {% block page_header %}
   <h4>{{ user.username|title }}'s Profile</h4>
@@ -18,6 +19,7 @@
       <div class="card-body">
         <h4 class="card-title">{{ user.username|title }}</h4>
         <p class="text-primary">{{ user.email }}</p>
+        <a class="text-primary" href="{% url 'myquestions' %}">My Questions</a>
         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
         <i class="card-text text-primary">Last Login: {{ user.last_login }}</i>
       </div>
@@ -26,7 +28,7 @@
 </div>
 
   <style>
-    .card{
+    .card{ 
       width: 60%;
     }
     
@@ -35,7 +37,7 @@
       height: 231px;
     }
     
-    h1, h2, h3, h4, h5, h6, p{
+    h1, h2, h3, h4, h5, h6, p, a{
       font-family: 'Josefin Sans';
     }
 

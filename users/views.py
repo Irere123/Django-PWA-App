@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from .forms import CreateUserForm
+from community.models import Question
 from .models import Profile
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
@@ -10,6 +11,14 @@ from django.contrib.auth import authenticate, login, logout
 # Create your views here.
 def profile(request):
     return render(request, 'users/profile.html')
+
+def myquestions(request):
+    u_questions = Question.objects.filter(owner=request.user)
+    context = {
+        'u_questions': u_questions
+    }
+    return render(request, 'users/myquestions.html', context)
+
 
 def registerPage(request):
     form = CreateUserForm()

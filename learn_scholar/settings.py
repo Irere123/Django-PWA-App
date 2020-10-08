@@ -76,13 +76,6 @@ MIDDLEWARE = [
     'social_django.middleware.SocialAuthExceptionMiddleware'
 ]
 
-# New
-REST_FRAMEWORK = {    
-    'DEFAULT_PERMISSION_CLASSES': [      
-        'rest_framework.permissions.jangoModelPermissionsOrAnonReadOnly'    
-    ]
-}
-
 #add this # New
 AUTHENTICATION_BACKENDS = [
     'social_core.backends.linkedin.LinkedinOAuth2',
