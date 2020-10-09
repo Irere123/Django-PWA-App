@@ -78,11 +78,14 @@ MIDDLEWARE = [
 
 #add this # New
 AUTHENTICATION_BACKENDS = [
-    'social_core.backends.linkedin.LinkedinOAuth2',
-    'social_core.backends.instagram.InstagramOAuth2',
     'social_core.backends.facebook.FacebookOAuth2',
     'django.contrib.auth.backends.ModelBackend',
 ]
+
+# FACEBOOK Login
+SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
+SOCIAL_AUTH_FACEBOOK_KEY = '361633105036078' # Facebook App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = 'dea2133bc0898db9178bbf1b62e9808f' # Facebook App Secret
 
 ROOT_URLCONF = 'learn_scholar.urls'
 
