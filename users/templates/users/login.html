@@ -20,9 +20,9 @@
     <div class="container">
         <form action="" method="POST">
 			{% csrf_token %}
-            <a href="{% url 'social:begin' 'facebook' %}" class="btn btn-ghost">
-                <img src="{% static 'images/facebook.svg' %}" >
-                Log in with Facebook 
+            <a href="{% url 'social:begin' 'google-oauth2' %}" class="btn btn-ghost">
+                <!-- <img src="{% static 'images/facebook.svg' %}" > -->
+                Log in with Google
             </a>
 
             <small> OR </small>

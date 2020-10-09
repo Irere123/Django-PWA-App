@@ -78,9 +78,15 @@ MIDDLEWARE = [
 
 #add this # New
 AUTHENTICATION_BACKENDS = [
+    'social_core.backends.google.GoogleOAuth2',
     'social_core.backends.facebook.FacebookOAuth2',
     'django.contrib.auth.backends.ModelBackend',
 ]
+
+# GOOGLE LOGIN
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '290027575764-f4n8r1foffn1nkrkg3kvkrr62etp2a04.apps.googleusercontent.com' # Google Consumer Key
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '5qxHZrg2ROxbgV4NGF0zDwlo' # Google Consumer Secret
+
 
 # FACEBOOK Login
 SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
