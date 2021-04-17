@@ -117,11 +117,11 @@ WSGI_APPLICATION = 'learn_scholar.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Learn Scholar',
+        'NAME': 'main',
         'USER': 'postgres',
-        'PASSWORD': 'irere2045 emmy',
+        'PASSWORD': '2006',
         'HOST': '127.0.0.1',
-        'PORT': '3000',
+        'PORT': '5432',
     }
 }
 
